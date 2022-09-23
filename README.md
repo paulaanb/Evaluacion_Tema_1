@@ -46,60 +46,100 @@ https://www.codewars.com/kata/57e76bc428d6fbc2d500036d/train/python
 
 # Solucion Ejercicios 
 # Ejercicio 1
-matriz = [ 
-    [1, 1, 1, 3],
-    [2, 2, 2, 7],
-    [3, 3, 3, 9],
-    [4, 4, 4, 13]
-]
+    matriz = [ 
+        [1, 1, 1, 3],
+        [2, 2, 2, 7],
+        [3, 3, 3, 9],
+        [4, 4, 4, 13]
+    ]
 
-matriz[1][-1] = sum(matriz[1][:-1])
-matriz[3][-1] = sum(matriz[3][:-1])
+    matriz[1][-1] = sum(matriz[1][:-1])
+    matriz[3][-1] = sum(matriz[3][:-1])
 
-print(matriz)
+    print(matriz)
 
 # Ejercicio 2
-cadena = input("Escribe una cadena de texto: ")
-print("¿La longitud de la cadena es mayor o igual que 3 y menor que 10?",
-      len(cadena) >= 3 and len(cadena) < 10 )
-      if len(cadena) >= 3 and len(cadena) < 10:
-        return True
-      else:
-        return False
+    cadena = input("Escribe una cadena de texto: ")
+    print("¿La longitud de la cadena es mayor o igual que 3 y menor que 10?",
+        len(cadena) >= 3 and len(cadena) < 10 )
+        if len(cadena) >= 3 and len(cadena) < 10:
+            return True
+        else:
+            return False
 
 # Ejercicio 3
-print( list( range( 0, 11 ) ) )
-print( list( range( -10, 1 ) ) )
-print( list( range( 0, 21, 2 ) ) )
-print( list( range( -19, 0, 2 ) ) )
-print( list( range( 0, 51, 5 ) ) )
+    l1= [1:11]
+    l2= [-10:1]
+    l3= [0:21]
+    l4= [-19:0]
+    l5= [0:51]
+
+    def is_sym(arr):
+        if len(arr) < 2:
+            return True
+        elif arr[0] == arr[-1]:
+            return is_sym(arr[1:-1])
+        else:
+            return False
+    print(l1)
+    print(l2)
+
+    def lista_pares(n,m):
+        if n > m:
+            return []
+        elif n%2==0:
+            return [n] + lista_pares(n+1, m)
+        else:
+            return lista_pares(n+1, m)
+    print(l3)
+    print (l4)
+
+    def lista_multiplos_de_cinco:
+        return:
+            True if valor % multiple == 0 
+        else:
+            False
+    multiples_5=[]
+    for i in range(0, 51):
+    
+        if multiple(i, 5):
+            multiples_5.append(i)
+    print ("Los multiples de 5 son:", multiples_5)
+
+    #Otra forma de hacerlo sin usar recursividad
+
+    print( list( range( 1, 11)))
+    print( list( range( -10, 1)))
+    print( list( range( 0, 21, 2 ) ) )
+    print( list( range( -19, 0, 2 ) ) )
+    print( list( range( 0, 51, 5 ) ) )
 
 # Ejercicio 4
-import sys
-print(sys.argv)
+    import sys
+    print(sys.argv)
 
-if len(sys.argv) == 3:
-    filas = int(sys.argv[1])
-    columnas = int(sys.argv[2])
+    if len(sys.argv) == 3:
+        filas = int(sys.argv[1])
+        columnas = int(sys.argv[2])
 
-    if filas < 1 or filas > 9 or columnas < 1 or columnas > 9:
-        print("Error - Filas o columnas incorrectos")
-        print("Ejemplo: tabla.py [1-9] [1-9]")
+        if filas < 1 or filas > 9 or columnas < 1 or columnas > 9:
+            print("Error - Filas o columnas incorrectos")
+            print("Ejemplo: tabla.py [1-9] [1-9]")
+        else:
+            for f in range(filas):
+                print("")
+                for c in range(columnas):
+                    print(" * ", end='')
+
     else:
-        for f in range(filas):
-            print("")
-            for c in range(columnas):
-                print(" * ", end='')
-
-else:
-    print("Error - Argumentos incorrectos")
-    print("Ejemplo: tabla.py [1-9] [1-9]")
+        print("Error - Argumentos incorrectos")
+        print("Ejemplo: tabla.py [1-9] [1-9]")
 
 
 # Ejercicio Extra
 
-import codewars_test as test
-from solution import string_to_array
+    import codewars_test as test
+    from solution import string_to_array
 
-def string_to_array(s):
-    return s.split(" ")
+    def string_to_array(s):
+        return s.split(" ")
