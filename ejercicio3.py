@@ -24,3 +24,5 @@ def lista_pares(n,m):
         return [n] + lista_pares(n+1, m)
     else:
         return lista_pares(n+1, m)
+print( 1, 11)
+
