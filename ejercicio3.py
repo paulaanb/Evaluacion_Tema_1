@@ -36,7 +36,7 @@ for i in range(0, 51):
         multiples_5.append(i)
 print ("Los multiples de 5 son:", multiples_5)
 
-#Otra forma de hacerlo sin usar recursividad
+#Otra forma de hacerlo sin usar recursividad usando range()
 
 print( list( range( 1, 11)))
 print( list( range( -10, 1)))
